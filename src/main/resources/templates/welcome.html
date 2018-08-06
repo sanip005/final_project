@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymyleaf.org">
+<head th:replace="common/header :: common-header" />
+<body data-spy="scroll"
+	data-target=".navbar-fixed-top">
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">****** Welcome ******</h1>
+					<hr />
+				</div>
+			</div>
+			<div class="main-login main-center">
+				<form class="form-horizontal" method="get" th:action="@{/welcome}" >
+
+					<div class="form-group">
+						<div class="form-group ">
+							<button type="submit"
+								class="btn btn-primary btn-lg btn-block login-button" 
+								name= "action" value= "order" th:action="@{/order}" >Order</button>
+						</div>
+						<hr />
+						<div class="form-group ">
+							<button type="submit"
+								class="btn btn-primary btn-lg btn-block login-button" name= "action" value= "viewOrders" th:action="@{/viewOrders}" >View
+								Order</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

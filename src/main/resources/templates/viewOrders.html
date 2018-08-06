@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymyleaf.org">
+<head th:replace="common/header :: common-header" />
+<body roleId="page-top" data-spy="scroll"
+	data-target=".navbar-fixed-top">
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Order View</h1>
+					<hr />
+
+				</div>
+			</div>
+			<div class="main-login main-center">
+				<form class="form-horizontal" method="get"
+					th:action="@{/viewOrders}">
+
+					<div class="form-group">
+						<table>
+							<thead>
+								<tr>
+									<th>Item</th>
+									<th>Quantity</th>
+									<th>Price Per Unit</th>
+									<!-- 									<th>Total Amount</th> -->
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${Order.empty}">
+									<td colspan="2">No Orders Available</td>
+								</tr>
+								<tr th:each="viewOrders : ${Order}">
+									<td><span th:text="${viewOrders.orderItem}">Item</span></td>
+									<td><span th:text="${viewOrders.quantity}">Quantity</span></td>
+									<td><span th:text="${viewOrders.pricePerUnit}">Price
+											Per Unit</span></td>
+								</tr>
+							</tbody>
+						</table>
+						<hr />
+					</div>
+				</form>
+			</div>
+			<div class="main-left">
+				<form th:action="@{/logout}" method="post">
+					<input type="submit" value="Logout" class="btn btn-primary btn-lg btn-block login-button"/>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div th:replace="common/header :: body-bottom-scripts" /></div>
+</body>
+</html>

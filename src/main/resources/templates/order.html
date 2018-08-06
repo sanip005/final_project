@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymyleaf.org">
+<head th:replace="common/header :: common-header" />
+<body data-spy="scroll"
+	data-target=".navbar-fixed-top">
+	<div class="container">
+		<div class="row main">
+			<div class="panel-heading">
+				<div class="panel-title text-center">
+					<h1 class="title">Customer Order List</h1>
+					<hr />
+				</div>
+			</div>
+			<div class="main-login main-center">
+				<form class="form-horizontal" method= "post" th:action="@{/order}">
+
+					<div class="form-group">
+						<table>
+							<tr>
+								<td><label for="itemName" class="cols-sm-2 control-label">Item
+										Name</label></td>
+								<td><input type="text" class="form-control" id="orderItem"
+									name="orderItem" required="required" /></td>
+							</tr>
+							<tr>
+								<td><label for="quantity" class="cols-sm-2 control-label">Quantity</label>
+								</td>
+								<td><input type="text" class="form-control" id="quantity"
+									name="quantity" required="required" /></td>
+							</tr>
+							<tr>
+								<td><label for="pricePerItem"
+									class="cols-sm-2 control-label">Price</label></td>
+								<td><input type="text" class="form-control"
+									id="pricePerUnit" name="pricePerUnit" required="required" /></td>
+							</tr>
+						</table>
+						<hr/>
+						<div class="form-group ">
+							<button type="submit" 
+							class="btn btn-primary btn-lg btn-block login-button" 
+							>Next Order</button>
+						</div>
+						<hr />
+						<div class="form-group ">
+							<a class="btn btn-info btn-lg btn-block login-button"
+							th:href= "@{/welcome}">Cancel</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+<div th:replace="common/header :: body-bottom-scripts" /></div>
+</body>
+</html>
