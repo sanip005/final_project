@@ -109,8 +109,10 @@ public class UserController {
 
 		//Manually connecting to MySQL using JDBC
 		try {
+			System.out.println("Initializing database connection");
 			// establishing connection using ConnectionFactory class.
 			Connection con = ConnectionFactory.getConnection();
+			System.out.println("Connected to the database");
 			// creating Statement object.
 			Statement stmt = con.createStatement();
 			// executing statement object using SQL query.
